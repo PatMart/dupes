@@ -56,3 +56,23 @@ class Dupes(object):
                 self.duped_hashes[h].append(f)
 
         return self.duped_hashes
+
+    def remove(self):
+        """
+        :desc: Remove dupes one by one
+        """
+
+        if not self.duped_hashes:
+            return
+
+        print 'Select files to remove:'
+        for ii in self.duped_hashes:
+            files = sorted(self.duped_hashes[ii])
+            for ll, kk in enumerate(files):
+                print '[{0}] {1}'.format(ll + 1, kk)
+            reply = int(raw_input()) - 1
+
+            if reply >= 0 and reply < len(files):
+                os.remove(files[reply])
+            else:
+                print '{0} is not a valid option'.format(reply + 1)

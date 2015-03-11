@@ -15,10 +15,13 @@ def main(remove):
     d.get_hashes()
     duped_files = d.dedupe()
 
-    for ii in duped_files:
-        print 'DUPES'
-        for kk in duped_files[ii]:
-            print kk
+    if remove:
+        d.remove()
+    else:
+        for ii in duped_files:
+            print 'DUPES'
+            for kk in duped_files[ii]:
+                print kk
 
     return
 
