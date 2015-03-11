@@ -24,7 +24,7 @@ test_requirements = [
 
 setup(
     name='dupes',
-    version='0.1.0',
+    version='0.2.0',
     description="Identify duplicate files (by SHA1) and remove them if needed",
     long_description=readme + '\n\n' + history,
     author="Devin Kelly",
