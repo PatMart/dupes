@@ -39,6 +39,7 @@ setup(
     install_requires=requirements,
     license="GPL2",
     zip_safe=False,
+    scripts=['scripts/dupes'],
     keywords='dupes',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
