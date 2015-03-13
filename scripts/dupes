@@ -12,6 +12,7 @@ __author__ = "Devin Kelly"
 def main(remove):
 
     d = dupes.Dupes()
+    d.get_files()
     d.get_hashes()
     duped_files = d.dedupe()
 
