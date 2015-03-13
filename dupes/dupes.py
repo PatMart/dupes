@@ -15,12 +15,24 @@ class Dupes(object):
         :desc: Initialize, get list of files
         """
 
-        self.pwd = os.getcwd()
-        self.files = [f for f in os.listdir(self.pwd) if
-                      os.path.isfile(os.path.join(self.pwd, f))]
         self.hashes = {}
         self.duped_hashes = {}
         self.buf_size = int(100e3)
+        self.files = []
+
+    def get_files(self, files_dir=None):
+        """
+
+        """
+        if files_dir is None:
+            d = os.getcwd()
+        elif os.path.isdir(files_dir):
+            d = os.getcwd()
+        else:
+            return
+
+        self.files = [f for f in os.listdir(d) if
+                      os.path.isfile(os.path.join(d, f))]
 
     def get_hashes(self):
         """
