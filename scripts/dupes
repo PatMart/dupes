@@ -9,10 +9,12 @@ __author__ = "Devin Kelly"
 @click.command()
 @click.option('-r', '--remove', is_flag=True, default=False,
               help='find dupes and remove them')
-def main(remove):
+@click.option('-d', '--directory', default=None,
+              help='find dupes and remove them')
+def main(remove, directory):
 
     d = dupes.Dupes()
-    d.get_files()
+    d.get_files(directory)
     d.get_hashes()
     duped_files = d.dedupe()
 
